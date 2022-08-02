@@ -1,0 +1,326 @@
+--DATIS OPTIONS PAGE
+
+local leftMargin = 56
+local width = 850
+
+-- Skins
+
+local EditBoxSkin = {
+	["params"] = {
+		["name"] = "editBoxSkin_login",
+	}
+}
+
+local CheckBoxSkin = {
+	["params"] = {
+		["name"] = "checkBoxSkin_options",
+	}
+}
+
+local TitleSkin = {
+	["params"] = {
+		["name"] = "staticOptionsTitleSkin",
+	},
+	["states"] = {
+		["released"] = {
+			[1] = {
+				["text"] = {
+					["horzAlign"] = {
+						["type"] = "min"
+					}
+				}
+			}
+		}
+	}
+}
+
+local LabelSkin = {
+	["params"] = {
+		["name"] = "staticOptionsCaptionSkin",
+	}
+}
+
+local HelpSkin = {
+	["params"] = {
+		["name"] = "staticSkin2",
+	},
+	["states"] = {
+		["released"] = {
+			[1] = {
+				["text"] = {
+					["fontSize"] = 10,
+					["horzAlign"] = {
+						["type"] = "min"
+					}
+				}
+			}
+		}
+	}
+}
+
+local ComboListSkin = {
+	["params"] = {
+		["name"] = "comboListSkin_options",
+	}
+}
+
+-- Content
+
+dialog = {
+	["children"] = {
+			["containerPlugin"] = {
+				["children"] =  {
+
+					----------------------------------------
+					-- Title
+					----------------------------------------
+					["hidTitleLabel"] = {
+						["params"] = {
+							["enabled"] = true,
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 30,
+								["w"] = width,
+								["h"] = 24,
+							},
+							["visible"] = true,
+							["tooltip"] = "",
+							["zindex"] = 0,
+							["text"] = "$DCS_HID",
+						},
+						["skin"] = TitleSkin,
+						["type"] = "Static",
+					},
+
+					-----------------------------------------------
+					-- hid Enable
+					-----------------------------------------------
+				
+					["hidOverlayEnabledCheckbox"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 90,
+								["w"] = width,
+								["h"] = 20,
+							},
+							["enabled"] = true,
+							["state"] = false,
+							["text"] = "$DCS_HID_ENABLE",
+							["tooltip"] = "",
+							["visible"] = true,
+							["zindex"] = 0,
+							["tabOrder"] = 0,
+						},
+						["skin"] = CheckBoxSkin,
+						["type"] = "CheckBox",
+					},
+
+					["hidOverlayEnabledHelpLabel"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 110,
+								["w"] = width,
+								["h"] = 40,
+							},
+							["enabled"] = true,
+							["text"] = "$DCS_HID_ENABLE_INFO",
+							["tooltip"] = "",
+							["visible"] = true,
+							["zindex"] = 0,
+						},
+						["skin"] = HelpSkin,
+						["type"] = "Static",
+					},
+
+					-----------------------------------------------
+					-- hid Auto Launch
+					-----------------------------------------------
+					["hidAutoLaunchEnabledCheckbox"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 185,
+								["w"] = width,
+								["h"] = 20,
+							},
+							["enabled"] = true,
+							["state"] = false,
+							["text"] = "$DCS_HID_AUTO_LAUNCH",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+							["tabOrder"] = 0,
+						},
+						["skin"] = CheckBoxSkin,
+						["type"] = "CheckBox",
+					},
+
+					["hidAutoLaunchEnabledHelpLabel"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 205,
+								["w"] = width,
+								["h"] = 40,
+							},
+							["enabled"] = true,
+							["text"] = "$DCS_HID_AUTO_LAUNCH_INFO",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+						},
+						["skin"] = HelpSkin,
+						["type"] = "Static",
+					},
+
+					["hidAutoLaunchEnabledHelpLabel2"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 225,
+								["w"] = width,
+								["h"] = 40,
+							},
+							["enabled"] = true,
+							["text"] = "$DCS_HID_AUTO_LAUNCH_INFO_2",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+						},
+						["skin"] = HelpSkin,
+						["type"] = "Static",
+					},
+
+					-----------------------------------------------
+
+					-----------------------------------------------
+					-- hid Compact Mode
+					-----------------------------------------------
+					["hidOverlayCompactModeEnabledCheckbox"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 300,
+								["w"] = width,
+								["h"] = 20,
+							},
+							["enabled"] = true,
+							["state"] = false,
+							["text"] = "$DCS_HID_OVERLAY_COMPACT",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+							["tabOrder"] = 0,
+						},
+						["skin"] = CheckBoxSkin,
+						["type"] = "CheckBox",
+					},
+
+					["hidCompactModeCheckboxLabel"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 320,
+								["w"] = width,
+								["h"] = 90,
+							},
+							["enabled"] = true,
+							["text"] = "$DCS_HID_OVERLAY_COMPACT_INFO",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+						},
+						["skin"] = HelpSkin,
+						["type"] = "Static",
+					},
+
+					-----------------------------------------------
+
+					-----------------------------------------------
+					-- hid Helper Text
+					-----------------------------------------------
+					["hidOverlayHelpTextEnabledCheckbox"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 405,
+								["w"] = width,
+								["h"] = 20,
+							},
+							["enabled"] = true,
+							["state"] = false,
+							["text"] = "$DCS_HID_OVERLAY_HELP_TEXT",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+							["tabOrder"] = 0,
+						},
+						["skin"] = CheckBoxSkin,
+						["type"] = "CheckBox",
+					},
+
+					["hidOverlayHelpTextEnabledCheckboxLabel"] = {
+						["params"] = {
+							["bounds"] = {
+								["x"] = leftMargin,
+								["y"] = 420,
+								["w"] = width,
+								["h"] = 90,
+							},
+							["enabled"] = true,
+							["text"] = "$DCS_HID_OVERLAY_HELP_TEXT_INFO",
+							["tooltip"] = "",
+							["visible"] = false,
+							["zindex"] = 0,
+						},
+						["skin"] = HelpSkin,
+						["type"] = "Static",
+					},
+
+					-----------------------------------------------
+				},
+			["type"] = "Panel",
+			["skin"] = {
+				["params"] = {
+					["name"] = "panelSkin",
+				},
+			},
+			["params"] = {
+				["enabled"] = true,
+				["bounds"] = {
+					["x"] = 0,
+					["y"] = 0,
+					["w"] = 974,
+					["h"] = 600,
+				},
+				["visible"] = true,
+				["tooltip"] = "",
+				["zindex"] = 2,
+				["text"] = "",
+			},
+		},
+	},
+	["type"] = "Window",
+	["skin"] = {
+		["params"] = {
+			["name"] = "windowSkin",
+		},
+	},
+	["params"] = {
+		["bounds"] = {
+			["h"] = 851,
+			["w"] = 1135,
+			["x"] = 0,
+			["y"] = 0,
+		},
+		["draggable"] = true,
+		["enabled"] =  true,
+		["hasCursor"] =  true,
+		["lockFlow"] = false,
+		["modal"] = false,
+		["text"] = "dialog",
+		["zOrder"] = 1,
+	},
+}
